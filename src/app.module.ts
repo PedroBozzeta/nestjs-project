@@ -30,7 +30,7 @@ import { ProductoModule } from './producto/producto.module';
         database: configService.get(DB_DATABASE),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
-        logging: false,
+        logging: true,
       }),
       inject: [ConfigService],
     }),

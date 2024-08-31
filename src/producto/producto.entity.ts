@@ -4,7 +4,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export default class ProductoEntity {
   @PrimaryGeneratedColumn()
   id: number;
-  @Column({ type: 'varchar', length: 30, nullable: false, unique: true })
+  @Column({ type: 'varchar', length: 60, nullable: false, unique: true })
   nombre: string;
   @Column({ type: 'float', nullable: false })
   precio: number;

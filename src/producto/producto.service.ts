@@ -67,7 +67,13 @@ export class ProductoService {
 
   async delete(id: number): Promise<any> {
     const producto = await this.findById(id);
-    await this.productoRepository.delete(producto);
-    return { message: 'Producto eliminado' };
+    // await this.productoRepository.delete(producto);
+    // return { message: 'Producto eliminado' };
+    if (producto) {
+      const result = await this.productoRepository.delete(id);
+      console.log('Resultado de eliminación:', result); // Agr
+    } else {
+      throw new NotFoundException('Producto no existente');
+    }
   }
 }
